@@ -6,13 +6,13 @@ root=Tk()
 txt = StringVar()
 
 def check():
-    x=txt.get()
-    if x:
-        libl1.configure(text="The game continues.") 
+    if txt.get() == "start":
+        libl1.configure(text="Game starts")
+        btn1.configure(text="Select Option")
+        ent1.delete(0, END)
     else:
-        print("try again!")
-
-
+        libl1.configure(text="type start to start the game")
+        
 libl1= Label(root, text="Welcome to my test game. Type start to continue!")
 libl1.pack()
 ent1= Entry(root, textvariable=txt)
